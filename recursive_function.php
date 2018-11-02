@@ -1,15 +1,12 @@
 <?php
 
 function print_number(){
-    $num =0;
-    if($num >27){
-       return;
-    }
-    if($num%2==1){
-        echo $num." ";
-    }
+    static $num;
+    if($num >27)return;
+    if($num==null) $num =1;
+    echo $num." "; 
+    $num+=2;
     print_number();
-    $num++;
 }
 
 print_number();
